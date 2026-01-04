@@ -409,11 +409,10 @@ document.addEventListener('DOMContentLoaded', () => {
         applyAutoScale();
     }, 150));
     
-    // 初始化预览（延迟执行确保 DOM 完全渲染）
-    setTimeout(() => {
-        updatePreview();
-        console.log('应用初始化完成');
-    }, 100);
+    // 初始化预览
+    updatePreview();
+    
+    console.log('应用初始化完成');
 });
 
 // ==================== Ribbon选项卡初始化 ====================
@@ -1454,12 +1453,21 @@ async function downloadAsZip() {
                 await preprocessPageImages(pageElement);
                 
                 // 暂存原始样式
+                const originalDisplay = pageElement.style.display;
                 const originalBorderRadius = pageElement.style.borderRadius;
                 const originalBoxShadow = pageElement.style.boxShadow;
+                const originalTransform = pageElement.style.transform;
+                const originalPosition = pageElement.style.position;
                 
-                // 临时移除可能影响渲染的样式
+                // 临时强制显示页面（关键修复：非活动页面默认隐藏导致渲染空白）
+                pageElement.style.display = 'flex';
+                pageElement.style.position = 'absolute';
+                pageElement.style.transform = 'none';
                 pageElement.style.borderRadius = '0';
                 pageElement.style.boxShadow = 'none';
+                
+                // 等待样式应用
+                await new Promise(resolve => setTimeout(resolve, 50));
                 
                 // 使用html2canvas渲染（使用更大的windowWidth避免触发小屏幕媒体查询）
                 const canvas = await html2canvas(pageElement, {
@@ -1477,6 +1485,9 @@ async function downloadAsZip() {
                 });
                 
                 // 恢复原始样式和图片URL
+                pageElement.style.display = originalDisplay;
+                pageElement.style.position = originalPosition;
+                pageElement.style.transform = originalTransform;
                 pageElement.style.borderRadius = originalBorderRadius;
                 pageElement.style.boxShadow = originalBoxShadow;
                 restorePageImages(pageElement);
@@ -1488,7 +1499,12 @@ async function downloadAsZip() {
                 zip.file(`poster_page_${String(i + 1).padStart(2, '0')}.png`, blob);
             } catch (error) {
                 console.error('生成第', i + 1, '页时出错:', error);
-                // 确保恢复图片URL
+                // 确保恢复页面样式和图片URL
+                pageElement.style.display = '';
+                pageElement.style.position = '';
+                pageElement.style.transform = '';
+                pageElement.style.borderRadius = '';
+                pageElement.style.boxShadow = '';
                 restorePageImages(pageElement);
                 alert(`生成第 ${i + 1} 页时出错: ${error.message}`);
             }
@@ -1741,12 +1757,21 @@ async function downloadAsPdf() {
                 await preprocessPageImages(pageElement);
                 
                 // 暂存原始样式
+                const originalDisplay = pageElement.style.display;
                 const originalBorderRadius = pageElement.style.borderRadius;
                 const originalBoxShadow = pageElement.style.boxShadow;
+                const originalTransform = pageElement.style.transform;
+                const originalPosition = pageElement.style.position;
                 
-                // 临时移除可能影响渲染的样式
+                // 临时强制显示页面（关键修复：非活动页面默认隐藏导致渲染空白）
+                pageElement.style.display = 'flex';
+                pageElement.style.position = 'absolute';
+                pageElement.style.transform = 'none';
                 pageElement.style.borderRadius = '0';
                 pageElement.style.boxShadow = 'none';
+                
+                // 等待样式应用
+                await new Promise(resolve => setTimeout(resolve, 50));
                 
                 // 使用html2canvas渲染
                 const canvas = await html2canvas(pageElement, {
@@ -1764,6 +1789,9 @@ async function downloadAsPdf() {
                 });
                 
                 // 恢复原始样式和图片URL
+                pageElement.style.display = originalDisplay;
+                pageElement.style.position = originalPosition;
+                pageElement.style.transform = originalTransform;
                 pageElement.style.borderRadius = originalBorderRadius;
                 pageElement.style.boxShadow = originalBoxShadow;
                 restorePageImages(pageElement);
@@ -1783,7 +1811,12 @@ async function downloadAsPdf() {
                 console.log(`PDF页面 ${i + 1} 添加完成`);
             } catch (error) {
                 console.error('生成第', i + 1, '页时出错:', error);
-                // 确保恢复图片URL
+                // 确保恢复页面样式和图片URL
+                pageElement.style.display = '';
+                pageElement.style.position = '';
+                pageElement.style.transform = '';
+                pageElement.style.borderRadius = '';
+                pageElement.style.boxShadow = '';
                 restorePageImages(pageElement);
                 alert(`生成第 ${i + 1} 页时出错: ${error.message}`);
                 downloadPdfBtn.disabled = false;
