@@ -1520,12 +1520,13 @@ body {
 .introduction-content pre {
     margin: 14px 0;
     padding: 0;
-    background: #1e293b;
+    background: #f6f8fa;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     position: relative;
     text-align: left;
+    border-left: 4px solid #3b82f6;
 }
 
 .introduction-content pre::before {
@@ -1536,8 +1537,9 @@ body {
     padding: 4px 12px;
     font-size: 11px;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    color: #94a3b8;
-    background: rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    background: #6b7280;
+    font-weight: 500;
     border-bottom-left-radius: 6px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -1549,7 +1551,7 @@ body {
     padding-right: 70px;
     background: transparent !important;
     border: none !important;
-    color: #e2e8f0;
+    color: #24292e;
     font-family: 'JetBrains Mono', 'Fira Code', 'Menlo', 'Monaco', 'Courier New', monospace;
     font-size: 12.5px;
     line-height: 1.6;
@@ -2007,11 +2009,12 @@ body {
 .poster-text pre {
     margin: 14px 0;
     padding: 0;
-    background: #1e293b;
+    background: #f6f8fa;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     position: relative;
+    border-left: 4px solid #3b82f6;
 }
 
 .poster-text pre::before {
@@ -2022,8 +2025,9 @@ body {
     padding: 4px 12px;
     font-size: 11px;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    color: #94a3b8;
-    background: rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    background: #6b7280;
+    font-weight: 500;
     border-bottom-left-radius: 6px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -2035,7 +2039,7 @@ body {
     padding-right: 70px;
     background: transparent !important;
     border: none !important;
-    color: #e2e8f0;
+    color: #24292e;
     font-family: 'JetBrains Mono', 'Fira Code', 'Menlo', 'Monaco', 'Courier New', monospace;
     font-size: 12.5px;
     line-height: 1.6;
@@ -2049,68 +2053,19 @@ body {
 }
 
 .poster-text pre code::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(0, 0, 0, 0.05);
     border-radius: 3px;
 }
 
 .poster-text pre code::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.2);
     border-radius: 3px;
 }
 
-/* Highlight.js 代码高亮颜色覆盖（暗色主题） */
+/* Highlight.js 使用 GitHub 浅色主题，无需额外覆盖 */
 .poster-text pre code.hljs {
     background: transparent !important;
     padding: 16px 18px;
-}
-
-.poster-text pre .hljs-keyword,
-.poster-text pre .hljs-selector-tag,
-.poster-text pre .hljs-built_in,
-.poster-text pre .hljs-name {
-    color: #c792ea;
-}
-
-.poster-text pre .hljs-string,
-.poster-text pre .hljs-attr {
-    color: #c3e88d;
-}
-
-.poster-text pre .hljs-number,
-.poster-text pre .hljs-literal {
-    color: #f78c6c;
-}
-
-.poster-text pre .hljs-comment {
-    color: #697098;
-    font-style: italic;
-}
-
-.poster-text pre .hljs-function,
-.poster-text pre .hljs-title {
-    color: #82aaff;
-}
-
-.poster-text pre .hljs-variable,
-.poster-text pre .hljs-params {
-    color: #f07178;
-}
-
-.poster-text pre .hljs-type,
-.poster-text pre .hljs-class {
-    color: #ffcb6b;
-}
-
-.poster-text pre .hljs-meta {
-    color: #89ddff;
-}
-
-.poster-text pre .hljs-operator {
-    color: #89ddff;
-}
-
-.poster-text pre .hljs-property {
-    color: #80cbc4;
 }
 
 /* ==================== 数学公式样式 ==================== */
@@ -2352,41 +2307,50 @@ body {
     border-color: #e5e7eb;
 }
 
-/* 各主题代码块适配 */
+/* 各主题代码块适配 - 使用浅色背景配合左边框主题色 */
 .theme-paper .poster-text pre {
-    background: linear-gradient(135deg, #881337 0%, #4c0519 100%);
+    background: #f6f8fa;
+    border-left-color: #e11d48;
 }
 
 .theme-theory .poster-text pre {
-    background: linear-gradient(135deg, #064e3b 0%, #022c22 100%);
+    background: #f6f8fa;
+    border-left-color: #059669;
 }
 
 .theme-method .poster-text pre {
-    background: linear-gradient(135deg, #1e3a8a 0%, #172554 100%);
+    background: #f6f8fa;
+    border-left-color: #2563eb;
 }
 
 .theme-tool .poster-text pre {
-    background: linear-gradient(135deg, #581c87 0%, #3b0764 100%);
+    background: #f6f8fa;
+    border-left-color: #9333ea;
 }
 
 .theme-thinking .poster-text pre {
-    background: linear-gradient(135deg, #78350f 0%, #451a03 100%);
+    background: #f6f8fa;
+    border-left-color: #d97706;
 }
 
 .theme-reading .poster-text pre {
-    background: linear-gradient(135deg, #7c2d12 0%, #431407 100%);
+    background: #f6f8fa;
+    border-left-color: #ea580c;
 }
 
 .theme-custom1 .poster-text pre {
-    background: linear-gradient(135deg, #155e75 0%, #083344 100%);
+    background: #f6f8fa;
+    border-left-color: #0891b2;
 }
 
 .theme-custom2 .poster-text pre {
-    background: linear-gradient(135deg, #3730a3 0%, #1e1b4b 100%);
+    background: #f6f8fa;
+    border-left-color: #4f46e5;
 }
 
 .theme-custom3 .poster-text pre {
-    background: linear-gradient(135deg, #374151 0%, #111827 100%);
+    background: #f6f8fa;
+    border-left-color: #6b7280;
 }
 
 .poster-text blockquote {
@@ -4819,11 +4783,12 @@ body {
 .article-text pre {
     margin: 16px 0;
     padding: 0;
-    background: #1e293b;
+    background: #f6f8fa;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     position: relative;
+    border-left: 4px solid #3b82f6;
 }
 
 .article-text pre::before {
@@ -4834,8 +4799,9 @@ body {
     padding: 4px 12px;
     font-size: 11px;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    color: #94a3b8;
-    background: rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    background: #6b7280;
+    font-weight: 500;
     border-bottom-left-radius: 6px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -4847,7 +4813,7 @@ body {
     padding-right: 70px;
     background: transparent !important;
     border: none !important;
-    color: #e2e8f0;
+    color: #24292e;
     font-family: 'JetBrains Mono', 'Fira Code', 'Menlo', 'Monaco', 'Courier New', monospace;
     font-size: 12.5px;
     line-height: 1.6;
@@ -4857,33 +4823,42 @@ body {
     text-indent: 0;
 }
 
-/* 各主题代码块适配 */
+/* 各主题代码块适配 - 使用浅色背景配合左边框主题色 */
 .theme-paper .article-text pre {
-    background: linear-gradient(135deg, #881337 0%, #4c0519 100%);
+    background: #f6f8fa;
+    border-left-color: #e11d48;
 }
 .theme-theory .article-text pre {
-    background: linear-gradient(135deg, #064e3b 0%, #022c22 100%);
+    background: #f6f8fa;
+    border-left-color: #059669;
 }
 .theme-method .article-text pre {
-    background: linear-gradient(135deg, #1e3a8a 0%, #172554 100%);
+    background: #f6f8fa;
+    border-left-color: #2563eb;
 }
 .theme-tool .article-text pre {
-    background: linear-gradient(135deg, #581c87 0%, #3b0764 100%);
+    background: #f6f8fa;
+    border-left-color: #9333ea;
 }
 .theme-thinking .article-text pre {
-    background: linear-gradient(135deg, #78350f 0%, #451a03 100%);
+    background: #f6f8fa;
+    border-left-color: #d97706;
 }
 .theme-reading .article-text pre {
-    background: linear-gradient(135deg, #7c2d12 0%, #431407 100%);
+    background: #f6f8fa;
+    border-left-color: #ea580c;
 }
 .theme-custom1 .article-text pre {
-    background: linear-gradient(135deg, #155e75 0%, #083344 100%);
+    background: #f6f8fa;
+    border-left-color: #0891b2;
 }
 .theme-custom2 .article-text pre {
-    background: linear-gradient(135deg, #3730a3 0%, #1e1b4b 100%);
+    background: #f6f8fa;
+    border-left-color: #4f46e5;
 }
 .theme-custom3 .article-text pre {
-    background: linear-gradient(135deg, #374151 0%, #111827 100%);
+    background: #f6f8fa;
+    border-left-color: #6b7280;
 }
 
 /* ========== 长文模式公式样式 ========== */
