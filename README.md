@@ -1,6 +1,6 @@
 # 📚 学术分享海报生成器
 
-一款专为科研工作者设计的知识分享海报生成工具，支持 Markdown 语法，一键生成适配小红书等社交平台的精美竖版海报。
+一款专为科研工作者设计的知识分享海报生成工具，支持 Markdown 语法，一键生成适配小红书等社交平台的精美竖版海报。代码由Claude Opus 4.5协助Vibe Coding完成。
 
 > 🎨 **在线体验**：[https://mingfenghong.github.io/xhs-poster-generator/](https://mingfenghong.github.io/xhs-poster-generator/)  
 > 📱 **作者小红书**：[@汤圆键盘坏了不能写论文](https://xhslink.com/m/8hVv9FFnXQj) - 计算社会科学笔记分享
@@ -111,10 +111,10 @@ MIT License - 欢迎自由使用和修改
 
 ## 💬 联系作者
 
-- **小红书**：[@汤圆键盘坏了不能写论文](https://xhslink.com/m/8hVv9FFnXQj)
+代码由Claude Opus 4.5协助完成。
+- **作者小红书**：[@汤圆键盘坏了不能写论文](https://xhslink.com/m/8hVv9FFnXQj)
 - 📒 计算社会科学笔记 | 管科专业在读
 - 📊 网络分析 | NLP | 仿真 | 质性 | 因果推断
-- ✉️ 欢迎交流讨论，不接辅导～
 
 ---
 
