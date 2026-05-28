@@ -2,7 +2,7 @@
 
 一款支持 Markdown 排版的图文海报生成工具，可一键生成适配小红书等社交平台的精美竖版海报。代码由 Claude Opus 4.5 协助 Vibe Coding 完成。
 
-> 🎨 **在线体验**：[https://mingfenghong.github.io/xhs-poster-generator/](https://mingfenghong.github.io/xhs-poster-generator/)  
+> 🎨 **在线体验**：[魔搭ModelScope创空间 - 在线体验](https://modelscope.cn/studios/HongMingfeng/xhs-poster-generator)  
 > 📱 **作者小红书**：[@汤圆键盘坏了不能写论文](https://xhslink.com/m/8hVv9FFnXQj) - 计算社会科学笔记分享
 
 ---
