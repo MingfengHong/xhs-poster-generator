@@ -1,5 +1,5 @@
 /**
- * 科研学习分享海报生成器 - 主逻辑
+ * Markdown图文海报生成器 - 主逻辑
  */
 
 // 全局状态
@@ -1434,7 +1434,13 @@ async function downloadAsZip() {
         alert('没有可下载的内容，请先生成海报');
         return;
     }
-    
+
+    const coverImageUrlInput = document.getElementById('cover-image-url');
+    if (!coverImageData && coverImageUrlInput && coverImageUrlInput.value.trim() === 'assets/default.jpg') {
+        alert('导出失败，请先上传封面图！');
+        return;
+    }
+
     const downloadBtn = document.getElementById('download-btn');
     downloadBtn.disabled = true;
     downloadBtn.textContent = '准备生成...';
@@ -1520,7 +1526,7 @@ async function downloadAsZip() {
         const link = document.createElement('a');
         link.href = URL.createObjectURL(zipBlob);
         const timestamp = new Date().toISOString().split('T')[0];
-        link.download = `科研学习分享_${timestamp}.zip`;
+        link.download = `Markdown海报_${timestamp}.zip`;
         link.click();
         
         URL.revokeObjectURL(link.href);
@@ -1729,7 +1735,13 @@ async function downloadAsPdf() {
         alert('没有可下载的内容，请先生成海报');
         return;
     }
-    
+
+    const coverImageUrlInput = document.getElementById('cover-image-url');
+    if (!coverImageData && coverImageUrlInput && coverImageUrlInput.value.trim() === 'assets/default.jpg') {
+        alert('导出失败，请先上传封面图！');
+        return;
+    }
+
     const downloadPdfBtn = document.getElementById('download-pdf-btn');
     downloadPdfBtn.disabled = true;
     downloadPdfBtn.textContent = '准备生成PDF...';
@@ -1831,7 +1843,7 @@ async function downloadAsPdf() {
         // 保存PDF
         downloadPdfBtn.textContent = '💾 正在保存PDF...';
         const timestamp = new Date().toISOString().split('T')[0];
-        pdf.save(`科研学习分享_${timestamp}.pdf`);
+        pdf.save(`Markdown海报_${timestamp}.pdf`);
         
         downloadPdfBtn.textContent = '✅ PDF导出完成！';
         setTimeout(() => {
